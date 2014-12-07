@@ -74,7 +74,7 @@ angular.module('auth')
       restrict: 'E',
       scope: false,
       transclude: false,
-      templateUrl: 'static/src/auth/templates/login.html',
+      templateUrl: 'src/auth/templates/login.html',
       link: function(scope, elem, attrs) {
 
         elem.bind('submit', function() {
