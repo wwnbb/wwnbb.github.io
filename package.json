@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "dm-project account service",
   "devDependencies": {
-    "gulp": "^3.8.9",
+    "gulp": "^3.8.10",
     "gulp-angular-templates": "0.0.1",
     "gulp-compass": "^2.0.1",
     "gulp-concat": "^2.4.0",
