@@ -1,0 +1,42 @@
+<div class='row' ng-controller='CompaniesListCtr'>
+    <div class="large-12 columns">
+        <form ng-submit="get(search)">
+            <div class="row">
+                <div class="large-6 columns">
+                    <label>Поиск
+                        <input type="text" placeholder="Введите данные" ng-model="search"/>
+                    </label>
+                </div>
+            </div>
+        </form>
+            <table>
+                <colgroup>
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 25%;">
+                    <col span="1" style="width: 5%;">
+                </colgroup>
+                <thead>
+                <tr>
+                    <td></td>
+                    <td>Имя</td>
+                    <td>Адрес</td>
+                    <td>Телефон</td>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody ng-repeat="item in data">
+                <tr>
+                    <td><a ng-href="#/companies/{@ item.id @}"><i class="fi-link size-18"></i></a></td>
+                    <td>{@item.name@}</td>
+                    <td>{@item.allocation@}</td>
+                    <td>{@item.phone@}</td>
+
+                    <td><a ng-click="deleteCompany(item.id)" href=""> <i class="fi-trash size-18"></i></a></td>
+                </tr>
+                </tbody>
+            </table>
+        <a class="button" href="#/companies/add">Добавить компанию</i></a>
+    </div>
+</div>

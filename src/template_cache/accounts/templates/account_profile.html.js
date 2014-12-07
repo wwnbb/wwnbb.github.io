@@ -1,0 +1,4 @@
+angular.module('app').run(['$templateCache', function($templateCache) {
+    $templateCache.put('accounts\templates\account_profile.html',
+        "<div class=\"row\" ng-controller='ProfileCtr'>\n  <div class=\"twelve columns\">\n    <table>\n      <tbody>\n      <tr>\n        <td> Электронная почта </td>\n        <td> {@data.email@} </td>\n      </tr>\n      <tr>\n        <td> Имя </td>\n        <td> {@data.first_name@} </td>\n      </tr>\n      <tr>\n        <td> Фамилия </td>\n        <td> {@data.last_name@} </td>\n      </tr>\n      <tr>\n        <td> Дата регистрации </td>\n        <td> {@data.date_joined@} </td>\n      </tr>\n      <tr>\n        <td>Компания</td>\n        <td>{@company.name@}</td>\n      </tr>\n      <tr>\n        <td>Адрес компании:</td>\n        <td>{@company.allocation@}</td>\n      </tr>\n      <tr>\n        <td>Телефон компании</td>\n        <td>{@company.phone@}</td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n");
+}]);

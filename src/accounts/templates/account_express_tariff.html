@@ -1,0 +1,19 @@
+<div class='row' ng-controller='PriceListCtr'>
+  <div class="twelve columns centered">
+    <table>
+      <tbody ng-repeat="item in data">
+      <tr>
+        <td>{@item.name@}</td>
+        <td>{@item.inside_mkad_courier_price@}</td>
+        <td>{@item.outside_mkad_courier_price@}</td>
+        <td>{@item.area_one_price@}</td>
+        <td>{@item.area_two_price@}</td>
+        <td>{@item.area_three_price@}</td>
+        <td>{@item.area_four_price@}</td>
+        <td>{@item.weight_overlimit_price@}</td>
+        <td>{@item.waiting_price@}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

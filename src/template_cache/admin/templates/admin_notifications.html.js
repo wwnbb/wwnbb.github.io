@@ -1,0 +1,4 @@
+angular.module('app').run(['$templateCache', function($templateCache) {
+    $templateCache.put('admin\templates\admin_notifications.html',
+        "<div class='row' ng-controller='NotificationsCtr'>\n    <div class=\"large-12 columns\">\n        <div ng-repeat=\"item in data\">\n            <p>Отвественный менеджер <a href=\"#/customer/{@item.manager@}\"><i class=\"fi-link size-18\"></i></a></p>\n            <p>Компания <a href=\"#/companies/{@item.company@}\"><i class=\"fi-link size-18\"></i></a></p>\n            <p>{@item.text@}</p>\n            <p>Время: {@item.time@}</p>\n            <a href=\"\"  ng-click='delete(item.id)' class=\"button tiny\">Удалить</a>\n            <hr/>\n        </div>\n    </div>\n</div>\n");
+}]);

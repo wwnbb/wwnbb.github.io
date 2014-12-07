@@ -1,0 +1,38 @@
+<div class='row' ng-controller='CustomersCtr'>
+    <div class="twelve columns centered">
+        <form ng-submit="get()">
+            <div class="row">
+                <div class="large-6 columns">
+                    <label>Поиск
+                        <input type="text" placeholder="Введите данные" ng-model="search"/>
+                    </label>
+                </div>
+            </div>
+        </form>
+        <table>
+            <colgroup>
+                <col span="1" style="width: 5%;">
+                <col span="1" style="width: 45%;">
+                <col span="1" style="width: 45%;">
+                <col span="1" style="width: 5%">
+            </colgroup>
+            <thead>
+            <tr>
+                <td></td>
+                <td>Контактное лицо</td>
+                <td>Почта</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat='item in data'>
+                <td><a ng-href="#/customer/{@ item.id @}"><i class="fi-link size-18"></i></a></td>
+                <td>{@ item.first_name @} {@ item.last_name @}</td>
+                <td> {@item.email@} </td>
+                <td><a href="" ng-click="delete(item.id)"><i class="fi-trash size-18"></i></a></td>
+            </tr>
+            </tbody>
+        </table>
+        <a class="button" href="#/registration">Добавить</a>
+    </div>
+</div>

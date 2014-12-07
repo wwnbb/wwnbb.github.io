@@ -1,0 +1,55 @@
+<div class='row' ng-controller='CreateOrdersCtr'>
+  <div class="twelve columns centered">
+    <!-- Форма отправления заказа -->
+    <fieldset>
+
+      <p>Дата приезда:</p>
+      <input class="datetimepicker" type="text" ng-model='form.order_datetime'>
+
+      <h2>Отправление:</h2>
+
+      <p>Плательщик:</p>
+      <select ng-model='form.payer'>
+        <option value="1">Отправитель</option>
+        <option value="2">Получатель</option>
+        <option value="3">Третье лицо</option>
+        <option value="4">Отправитель (безналичный расчет)</option>
+        <option value="5">Получатель (безналичный расчет)</option>
+        <option value="6">Третье лицо (безналичный расчет)</option>
+      </select>
+
+      <p>Ценность отправления</p>
+      <input type="text" ng-model='form.worth'>
+
+      <p><span class="mark">**</span>Вес (кг):</p>
+      <input ng-model='form.weight' type="text" class="weight">
+
+      <p><span class="mark">**</span>Размеры (см):</p>
+      <input ng-model='form.dimension_x' type="text" class="length">
+      <p>Длина</p>
+      <p>X</p>
+      <input ng-model='form.dimension_y' type="text" class="width">
+      <p>Ширина</p>
+      <p>X</p>
+      <input ng-model='form.dimension_z'  type="text" class="height">
+      <p>Высота</p>
+
+      <p>Комментарий:</p>
+      <input ng-model='form.comment' type="text">
+
+      <p>Тип отправления:</p>
+      <select ng-model='form.is_docs'>
+        <option value='true' selected="selected">Документы</option>
+        <option value='false'>Товары</option>
+      </select>
+
+      <p>Адрес отправителя</p>    
+      <input type="text" ng-model="form.sender_adress">
+
+      <p>Адрес получателя</p>
+      <input type="text" ng-model="form.recipeint_adress">
+      <a href="" class="button" value="" ng-click="sendform()">Добавить заказ</a>
+    </fieldset>
+  </div>
+</div>
+<script type="text/javascript"> jQuery('.datetimepicker').datetimepicker( { onGenerate:function( ct ){ jQuery(this).find('.xdsoft_date.xdsoft_weekend') .addClass('xdsoft_disabled'); }, format:"Y-m-d\\TH:i", lang: 'ru', minTime:'10:00', maxTime:'21:00', timepickerScrollbar:'false', dayOfWeekStart: 1 }) </script>

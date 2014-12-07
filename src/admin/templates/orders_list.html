@@ -1,0 +1,51 @@
+<div class='row' ng-controller='OrdersListCtr'>
+    <div class="twelve columns centered">
+
+        <table>
+            <thead>
+            <tr>
+                <td>Вес</td>
+                <td>Ширина</td>
+                <td>Высота</td>
+                <td>Длинна</td>
+                <td>Ценность</td>
+                <td>Куда</td>
+                <td>Откуда</td>
+                <td>Документы</td>
+                <td>Дата заказа</td>
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in data">
+                <td>
+                    {@item.weight@}
+                </td>
+                <td>
+                    {@item.dimension_x@}
+                </td>
+                <td>
+                    {@item.dimension_y@}
+                </td>
+                <td>
+                    {@item.dimension_z@}
+                </td>
+                <td>
+                    {@item.worth@}
+                </td>
+                <td>
+                    {@item.recipeint_adress@}
+                </td>
+                <td>
+                    {@item.sender_adress@}
+                </td>
+                <td ng-bind-html="item.is_docs | bool2icon">
+                </td>
+                <td>
+                    {@item.order_datetime@}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class='row' ng-controller='CustomerAccountCtr'>
+    <div class="small-6 columns" ng-show="!edit">
+        <table>
+            <colgroup>
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 80%;">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td>Почта</td>
+                <td>{@data.email@}</td>
+            </tr>
+            <tr>
+                <td>Дата регистрации</td>
+                <td>{@data.date_joined@}</td>
+            </tr>
+            <tr>
+                <td>Контактное лицо</td>
+                <td>{@data.last_name@} {@data.first_name@}</td>
+            </tr>
+            <tr>
+                <td>Компания:</td>
+                <td><a href="#/companies/{@data.company@}/">{@data.company_name@}</a></td>
+            </tr>
+            <tr>
+                <td>Привилегии пользователя</td>
+                <td ><span ng-repeat="item in data.permissions_names">{@item@} </span></td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="" class="button" ng-click="startEdit()">Редактировать</a>
+    </div>
+    <div ng-show='edit'>
+        <form>
+            <input type="text" ng-model="data.email"/>
+            <input type="text" ng-model="data.last_name"/>
+            <input type="text" ng-model="data.first_name"/>
+            <select ng-model="data.company" ng-options="company.id as company.name for company in companies" required></select>
+            <select ng-model="data.permissions" ng-options="permission.id as permission.permission for permission in permissions" required></select>
+            <a class="button" href="" ng-click="putUser()">Сохранить</i></a>
+        </form>
+        {@data.permissions@}
+    </div>
+</div>
+<script type="text/javascript"> jQuery('.datetimepicker').datetimepicker( { onGenerate:function( ct ){ jQuery(this).find('.xdsoft_date.xdsoft_weekend') .addClass('xdsoft_disabled'); }, format:"d.m.Y H:i", lang: 'ru', minTime:'10:00', maxTime:'21:00', timepickerScrollbar:'false', dayOfWeekStart: 1 }) </script>

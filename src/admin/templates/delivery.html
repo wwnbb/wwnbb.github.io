@@ -1,0 +1,19 @@
+<div class='row' ng-controller='DeliveryCtr'>
+    <div class="twelve columns centered">
+        <fieldset>
+            <input type="text" placeholder="Вес" ng-model="form.weight"/>
+            <input type="text" placeholder="Адрес" ng-model="form.adress"/>
+            <select ng-model="form.type" ng-options="item.id as item.name for item in tarifs"> </select>
+            <a href="" class="button" value="" ng-click="add()">add</a>
+        </fieldset>
+            <table>
+			<tbody>
+				<tr ng-repeat='item in data'>
+                    <td>{@item.id@}</td>
+                    <td>{@item.weight@}</td>
+                    <td>{@item.adress@}</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</div>

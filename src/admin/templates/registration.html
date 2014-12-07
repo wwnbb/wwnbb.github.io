@@ -1,0 +1,90 @@
+<div class='row' ng-controller='RegistrationCtr'>
+    <div class="twelve columns centered">
+        <fieldset>
+
+            <form name="form" novalidate>
+                <label class="control-label" for="email">Электронная почта:</label>
+                <input ng-class="{ error: form.email.$invalid }" type="email" placeholder="youmail@mailprovider.ru" name="email" ng-model="form.user.email" ng-minlength=3 ng-maxlength=80 required>
+
+             <!--   <div class="error-container"
+                     ng-show="form.email.$dirty && form.email.$invalid">
+                    <small class="error"
+                           ng-show="form.email.$error.required">
+                        Введите адрес электронный почты.
+                    </small>
+                    <small class="error"
+                           ng-show="form.email.$error.minlength">
+                        Слишком короткий адрес электронной почты.
+                    </small>
+                    <small class="error"
+                           ng-show="form.email.$error.email">
+                        Неправильно введен электронный адрес.
+                    </small>
+                    <small class="error"
+                           ng-show="form.email.$error.maxlength">
+                        Ваш email должен быть короче чем 80 символов
+                    </small>
+                </div> -->
+
+                <label class="control-label" for="password">password:</label>
+                <input type="text" ng-class="{ error: form.password.$invalid }" name="password" ng-model="form.user.password" required ng-minlength=5 ng-maxlength=16>
+             <!--   <div class="error-container"
+                     ng-show="form.password.$dirty && form.password.$invalid">
+                    <small class="error"
+                           ng-show="form.password.$error.required">
+                        Введите пароль.
+                    </small>
+                    <small class="error"
+                           ng-show="form.password.$error.minlength">
+                        Слишком короткий пароль.
+                    </small>
+                    <small class="error"
+                           ng-show="form.password.$error.maxlength">
+                        Ваш пароль должен быть короче чем 16 символов
+                    </small>
+                </div> -->
+                <label class="control-label" for="first_name">Имя:</label>
+                <input type="text" ng-class="{ error: form.first_name.$invalid }" name="first_name" ng-model="form.user.first_name" required ng-minlength=3 ng-maxlength=25>
+                <!--<div class="error-container"
+                     ng-show="form.first_name.$dirty && form.first_name.$invalid">
+                    <small class="error"
+                           ng-show="form.first_name.$error.required">
+                        Введите Имя.
+                    </small>
+                    <small class="error"
+                           ng-show="form.first_name.$error.minlength">
+                        Слишком короткое имя.
+                    </small>
+                    <small class="error"
+                           ng-show="form.first_name.$error.maxlength">
+                        Слишком длинное имя.
+                    </small>
+                </div> -->
+                <label class="control-label" for="last_name">Фамилия:</label>
+                <input type="text" ng-class="{ error: form.last_name.$invalid }" name="last_name" ng-model="form.user.last_name" required ng-minlength=5 ng-maxlength=25>
+                <!--<div class="error-container"
+                     ng-show="form.last_name.$dirty && form.last_name.$invalid">
+                    <small class="error"
+                           ng-show="form.last_name.$error.required">
+                        Введите фамилию.
+                    </small>
+                    <small class="error"
+                           ng-show="form.last_name.$error.minlength">
+                        Слишком короткая фамилия.
+                    </small>
+                    <small class="error"
+                           ng-show="form.last_name.$error.maxlength">
+                        Слишком длинная фамилия.
+                    </small>
+                </div> -->
+                <button ng-disabled="form.$invalid || isUnchanged(user)" title="Добавить пользователя в систему." ng-click="signup()" class="btn btn-primary">Добавить</button>
+            </form>
+            <p>hello {@ form @}</p>
+        </fieldset>
+        <style>
+            input.has-visited.ng-invalid:not(.has-focus) {
+                background-color: #ffeeee;
+            }
+        </style>
+    </div>
+</div>

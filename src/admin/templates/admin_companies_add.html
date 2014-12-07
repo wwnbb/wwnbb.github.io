@@ -1,0 +1,15 @@
+<div ng-controller='CompaniesAddCtr'>
+    <div class='row' >
+        <div class="large-6 columns">
+            <form name="form" class="css-form" novalidate>
+                <label for="name">Компания</label>
+                <input type="text" id="name" ng-model="form.name"/>
+                <label for="allocation">Адрес</label>
+                <input type="text" id="allocation" ng-model="form.allocation"/>
+                <label for="phone">Телефон</label>
+                <input type="text" id="phone" ng-model="form.phone"/>
+                <a class="button" href="" ng-click="addCompany()"  ng-disabled="form.$invalid || isUnchanged(user)">Добавить компанию</i></a>
+            </form>
+        </div>
+    </div>
+</div>

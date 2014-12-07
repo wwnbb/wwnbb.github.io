@@ -1,0 +1,50 @@
+<div ng-controller='CompaniesDetailCtr'>
+    <div class='row' >
+        <div class="large-6 columns">
+            <table>
+                <colgroup>
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 80%;">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td>Имя</td>
+                    <td>{@data.name@}</td>
+                </tr>
+                <tr>
+                    <td>Адрес</td>
+                    <td>{@data.allocation@}</td>
+                </tr>
+                <tr>
+                    <td>Менеджер</td>
+                    <td><a href="#/customer/{@data.manager@}">{@data.manager_deatil@}</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            <p>Сотрудники</p>
+            <table>
+                <tr ng-repeat="item in users">
+                    <td><a ng-href="#/customer/{@ item.id @}"><i class="fi-link size-18"></i></a></td>
+                    <td>{@item.email@}</td>
+                    <td>{@item.first_name@} {@item.last_name@}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="large-6 columns">
+            <p>Заказы</p>
+            <table>
+                <tr ng-repeat="item in order_containers">
+                    <td><a href="#/order-container/{@item.id@}"><i class="fi-link size-18"></i></a></td>
+                    <td>{@item.id@}</td>
+                    <td>{@item.status@}</td>
+                    <td>{@item.customer_date@}</td>
+                    <td>{@item.manager_date@}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

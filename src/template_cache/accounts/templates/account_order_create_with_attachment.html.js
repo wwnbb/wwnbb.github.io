@@ -1,0 +1,4 @@
+angular.module('app').run(['$templateCache', function($templateCache) {
+    $templateCache.put('accounts\templates\account_order_create_with_attachment.html',
+        "<div class=\"row\" ng-controller='FileUploadCtr'>\n    <input type=\"file\" ng-model=\"form.file\"/><br/>\n        <li>\n            <p>Дата приезда:</p>\n            <input class=\"datetimepicker\" type=\"text\" ng-model='form.deliver_date_time'>\n        </li>\n        <p>{@form@}</p>\n</div>\n\n<script type=\"text/javascript\"> jQuery('.datetimepicker').datetimepicker(\n        {\n            format:\"Y-m-d\\\\TH:i\",\n            lang: 'ru',\n            minTime:'10:00',\n            maxTime:'21:00',\n            timepickerScrollbar:'false'\n        })\n</script>\n");
+}]);

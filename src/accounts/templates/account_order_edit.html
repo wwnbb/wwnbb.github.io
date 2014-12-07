@@ -1,0 +1,35 @@
+<div class='row' ng-controller='AccountOrderEditCtr'>
+    <div class="twelve columns centered">
+        <div class="row">
+            <fieldset>
+                <legend>Заказ</legend>
+                <div class="large-6 columns">
+                    <label>Комментарий к заказу
+                        <p>{@data.comment@}</p>
+                    </label>
+                </div>
+                <div class="large-6 columns ">
+                    <label>Дата окончания заказа
+                        <p>{@data.customer_date@}</p>
+                    </label>
+                </div>
+
+                <div class="row" ng-controller='FileUploadCtr'>
+                    <input type="file" nv-file-select uploader="uploader"/><br/>
+        <ul>
+            <li ng-repeat="item in uploader.queue">
+                Name: <span ng-bind="item.file.name"></span><br/>
+                <button ng-click="item.upload()">upload</button>
+            </li>
+        </ul>
+                </div>
+
+
+                <div ng-controller="ModalDemoCtr">
+                    <button class="button" ng-click="open()">Open me!</button>
+                    <div ng-show="selected">Selection from a modal: {@ selected @}</div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

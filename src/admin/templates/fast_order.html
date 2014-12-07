@@ -1,0 +1,141 @@
+<div class='row' ng-controller='FastOrderCtr'>
+    <div class="row">
+        <div class="large-12 columns">
+            <!-- Форма создания пользователя -->
+            <fieldset ng-show="!formState.registrationIsDone">
+                <legend>Создание пользователя</legend>
+
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label>Электронная почта
+                            <input type="email" placeholder="" ng-model="user.email"/>
+                        </label>
+                    </div>
+                    <div class="large-6 columns ">
+                        <label>Пароль
+                            <input type="password" placeholder="" ng-model="user.password"/>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label>Имя
+                            <input type="text" placeholder="" ng-model="user.first_name"/>
+                        </label>
+                    </div>
+                    <div class="large-6 columns end">
+                        <label>Фамилия
+                            <input type="text" placeholder="" ng-model="user.last_name"/>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-6 columns end">
+                        <label>Телефон
+                            <input type="tel" placeholder="" ng-model="user.phone"/>
+                        </label>
+                    </div>
+                    <div class="large-6 columns ">
+                        <label>Название компании
+                            <input type="text" placeholder="" ng-model="user.company_name"/>
+                        </label>
+                    </div>
+                </div>
+
+                <a href="" class="button" value="" ng-click="addUser()">Зарегистрировать</a>
+
+            </fieldset>
+
+
+            <!-- Показываем форму пользователя -->
+            <div class="" ng-show="formState.registrationIsDone">
+                <fieldset>
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <label>Имя
+                                <p>{@formState.AddedUser.first_name@}</p>
+                            </label>
+                        </div>
+                        <div class="large-6 columns end">
+                            <label>Фамилия
+                                <p>{@formState.AddedUser.last_name@}</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <label>Электронная почта
+                                <p>{@formState.AddedUser.email@}</p>
+                            </label>
+                        </div>
+                        <div class="large-6 columns end">
+                            <label>Время регистрации
+                                <p>{@formState.AddedUser.date_joined@}</p>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Форма отправления заказа -->
+    <fieldset ng-show="formState.registrationIsDone">
+        <legend>Отправление:</legend>
+        <p>Дата приезда курьера:</p>
+        <input class="datetimepicker" type="text" ng-model='form.order_datetime'>
+        <p>Плательщик:</p>
+        <select ng-model='form.payer'>
+            <option value="1">Отправитель</option>
+            <option value="2">Получатель</option>
+            <option value="3">Третье лицо</option>
+            <option value="4">Отправитель (безналичный расчет)</option>
+            <option value="5">Получатель (безналичный расчет)</option>
+            <option value="6">Третье лицо (безналичный расчет)</option>
+        </select>
+        <p><span class="mark">**</span>Вес (кг):</p>
+        <input ng-model='form.weight' type="text" class="weight">
+
+        <div class="row">
+            <fieldset>
+                <legend><p><span class="mark">**</span>Размеры (см):</p></legend>
+                <div class="large-4 columns">
+                    <p>Длина</p>
+                    <input ng-model='form.dimension_x' type="text" class="length">
+                </div>
+                <div class="large-4 columns">
+                    <p>Ширина</p>
+                    <input ng-model='form.dimension_y' type="text" class="width">
+                </div>
+                <div class="large-4 columns">
+                    <p>Высота</p>
+                    <input ng-model='form.dimension_z'  type="text" class="height">
+                </div>
+            </fieldset>
+        </div>
+
+
+        <p>Комментарий:</p>
+        <input ng-model='form.comment' type="text">
+
+        <p>Тип отправления:</p>
+        <select ng-model='form.is_docs'>
+            <option value='true' selected="selected">Документы</option>
+            <option value='false'>Товары</option>
+        </select>
+
+        <p>Адрес отправителя</p>
+        <input type="text" ng-model="form.sender_adress">
+
+        <p>Адрес получателя</p>
+        <input type="text" ng-model="form.recipeint_adress">
+
+        <a href="" class="button" value="" ng-click="sendform()">Добавить заказ</a>
+    </fieldset>
+</div>
+
+<script type="text/javascript"> jQuery('.datetimepicker').datetimepicker( { onGenerate:function( ct ){ jQuery(this).find('.xdsoft_date.xdsoft_weekend') .addClass('xdsoft_disabled'); }, format:"Y-m-d\\TH:i", lang: 'ru', minTime:'10:00', maxTime:'21:00', timepickerScrollbar:'false', dayOfWeekStart: 1 }) </script>

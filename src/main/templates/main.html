@@ -1,0 +1,18 @@
+<div ng-controller='test'>
+    <div class='row' >
+        <get-form></get-form>
+        <div ng-controller="DemoController">
+            <form name="form" >
+                Model value : <input type="text" size="3" ng-model="rating"><br>
+                Min value: <input type="text" size="3" ng-model="minRating"><br>
+                Max value: <input type="text" size="3" ng-model="maxRating"><br>
+                Form has been modified : {@ form.$dirty @}<br>
+                Form is valid : {@ form.$valid @}
+                <hr>
+                <div min="minRating" max="maxRating"  ng-model="rating" rn-stepper></div>
+            </form>
+            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=37.78944432735443%2C55.75999676176712%2C37.79668092727661%2C55.762242347423616&amp;layer=mapnik&amp;marker=55.76111957075979%2C37.79306262731552" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=55.76112&amp;mlon=37.79306#map=18/55.76112/37.79306">Посмотреть более крупную карту</a></small>
+        </div>
+    </div>
+</div>
+

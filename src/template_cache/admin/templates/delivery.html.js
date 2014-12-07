@@ -1,0 +1,4 @@
+angular.module('app').run(['$templateCache', function($templateCache) {
+    $templateCache.put('admin\templates\delivery.html',
+        "<div class='row' ng-controller='DeliveryCtr'>\n    <div class=\"twelve columns centered\">\n        <fieldset>\n            <input type=\"text\" placeholder=\"Вес\" ng-model=\"form.weight\"/>\n            <input type=\"text\" placeholder=\"Адрес\" ng-model=\"form.adress\"/>\n            <select ng-model=\"form.type\" ng-options=\"item.id as item.name for item in tarifs\"> </select>\n            <a href=\"\" class=\"button\" value=\"\" ng-click=\"add()\">add</a>\n        </fieldset>\n            <table>\n\t\t\t<tbody>\n\t\t\t\t<tr ng-repeat='item in data'>\n                    <td>{@item.id@}</td>\n                    <td>{@item.weight@}</td>\n                    <td>{@item.adress@}</td>\n\t\t\t\t</tr>\n\t\t\t</tbody>\n\t\t</table>\n    </div>\n</div>\n");
+}]);

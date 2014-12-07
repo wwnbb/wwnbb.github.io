@@ -1,0 +1,4 @@
+angular.module('app').run(['$templateCache', function($templateCache) {
+    $templateCache.put('auth\templates\login.html',
+        "<div class='row'>\r\n<div class=\"four columns centered\">\r\n\t<form>\r\n\t\t{@ error @}\r\n\t<ul class=\"no-bullet\">\r\n\t\t<li class=\"field\"><label>Электронная почта</label>\r\n\t\t<li class=\"field\"><input type=\"email\" placeholder=\"Email input\" class=\"email input\" ng-model='username'></li>\r\n\t\t<li class=\"field\"><label>Пароль</label>\r\n\t\t<li class=\"field\"><input type=\"password\" placeholder=\"Password input\" class=\"password input\" ng-model='password'></li>\r\n\t<ul>\r\n\t\t<br>\r\n\t\t<div class=\"medium success btn\"><button type=\"submit\">Log in</button></div>\r\n\t</form>\r\n</div>\r\n</div>\r\n");
+}]);

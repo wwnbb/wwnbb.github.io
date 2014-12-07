@@ -1,0 +1,12 @@
+<div class='row' ng-controller='NotificationsCtr'>
+    <div class="large-12 columns">
+        <div ng-repeat="item in data">
+            <p>Отвественный менеджер <a href="#/customer/{@item.manager@}"><i class="fi-link size-18"></i></a></p>
+            <p>Компания <a href="#/companies/{@item.company@}"><i class="fi-link size-18"></i></a></p>
+            <p>{@item.text@}</p>
+            <p>Время: {@item.time@}</p>
+            <a href=""  ng-click='delete(item.id)' class="button tiny">Удалить</a>
+            <hr/>
+        </div>
+    </div>
+</div>

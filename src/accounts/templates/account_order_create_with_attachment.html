@@ -1,0 +1,18 @@
+<div class="row" ng-controller='FileUploadCtr'>
+    <input type="file" ng-model="form.file"/><br/>
+        <li>
+            <p>Дата приезда:</p>
+            <input class="datetimepicker" type="text" ng-model='form.deliver_date_time'>
+        </li>
+        <p>{@form@}</p>
+</div>
+
+<script type="text/javascript"> jQuery('.datetimepicker').datetimepicker(
+        {
+            format:"Y-m-d\\TH:i",
+            lang: 'ru',
+            minTime:'10:00',
+            maxTime:'21:00',
+            timepickerScrollbar:'false'
+        })
+</script>

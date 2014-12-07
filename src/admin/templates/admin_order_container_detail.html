@@ -1,0 +1,52 @@
+<div class='row' ng-controller='OrderContainerCtr'>
+    <div class="large-12 columns">
+
+        <fieldset>
+            <legend>Проект</legend>
+        <div>
+            {@data.orderContainers.id@}
+            {@data.orderContainers.status@}
+            {@data.orderContainers.customer_date@}
+        </div>
+        </fieldset>
+           <fieldset>
+           <legend>Статусы контракта</legend>
+          <div ng-repeat="item in data.status">
+              {@item.status | int2status @} {@item.time_change@}
+          </div>
+
+               </fieldset>
+
+        <fieldset>
+            <legend>Файлы проекта</legend>
+        <div ng-repeat="file in data.files">
+            {@data.file.user@}
+            {@data.file.id@}
+            <a href="media/{@file.file@}">{@file.file@} <i class="fi-download size-18"></i></a>
+        </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Заказы</legend>
+            <div ng-repeat="order in data.orders">
+                <a href="#/order-container/{@data.orderContainers.id@}/orders/{@order.id@}"><i class="fi-paperclip size-18"></i></a>
+                {@order.id@}
+                {@order.payer@}
+                {@order.comment@}
+                {@order.weight@}
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><a href="#/order-container/{@data.orderContainers.id@}/schedule">Расписание</a></legend>
+            <div ng-repeat="item in data.schedule">
+                <a href="#/order-container/{@data.orderContainers.id@}/schedule/{@item.id@}"><i class="fi-paperclip size-18"></i></a>
+                {@item.id@}
+                {@item.date@}
+                {@item.start_time@}
+                {@item.end_time@}
+            </div>
+        </fieldset>
+
+    </div>
+</div>

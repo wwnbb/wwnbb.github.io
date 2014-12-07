@@ -1,0 +1,4 @@
+angular.module('app').run(['$templateCache', function($templateCache) {
+    $templateCache.put('accounts\templates\account_express_tariff.html',
+        "<div class='row' ng-controller='PriceListCtr'>\n  <div class=\"twelve columns centered\">\n    <table>\n      <tbody ng-repeat=\"item in data\">\n      <tr>\n        <td>{@item.name@}</td>\n        <td>{@item.inside_mkad_courier_price@}</td>\n        <td>{@item.outside_mkad_courier_price@}</td>\n        <td>{@item.area_one_price@}</td>\n        <td>{@item.area_two_price@}</td>\n        <td>{@item.area_three_price@}</td>\n        <td>{@item.area_four_price@}</td>\n        <td>{@item.weight_overlimit_price@}</td>\n        <td>{@item.waiting_price@}</td>\n      </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n");
+}]);

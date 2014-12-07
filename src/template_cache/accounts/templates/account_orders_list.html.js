@@ -1,0 +1,4 @@
+angular.module('app').run(['$templateCache', function($templateCache) {
+    $templateCache.put('accounts\templates\account_orders_list.html',
+        "<div class=\"row\" ng-controller='OrdersCtr'>\n    <table>\n        <thead>\n        <tr>\n            <td>Номер заказа</td>\n            <td>Комментарий</td>\n            <td>Дата заказчика</td>\n            <td>Согласованная дата</td>\n            <td>Текущий статус</td>\n        </tr>\n        </thead>\n        <tbody>\n        <tr ng-repeat='item in data'>\n            <td><a href='#/orders/{@ item.id @}'><i class=\"fi-link size-18\"></i></a></td>\n            <td>{@ item.comment @}</td>\n            <td>{@ item.customer_date @}</td>\n            <td>{@ item.manager_date @}</td>\n            <td>{@item.status@}</td>\n        </tr>\n        </tbody>\n    </table>\n    <a href=\"#/orders/create\" class=\"button\">Добавить заказ</a>\n</div>");
+}]);

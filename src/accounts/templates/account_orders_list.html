@@ -1,0 +1,23 @@
+<div class="row" ng-controller='OrdersCtr'>
+    <table>
+        <thead>
+        <tr>
+            <td>Номер заказа</td>
+            <td>Комментарий</td>
+            <td>Дата заказчика</td>
+            <td>Согласованная дата</td>
+            <td>Текущий статус</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat='item in data'>
+            <td><a href='#/orders/{@ item.id @}'><i class="fi-link size-18"></i></a></td>
+            <td>{@ item.comment @}</td>
+            <td>{@ item.customer_date @}</td>
+            <td>{@ item.manager_date @}</td>
+            <td>{@item.status@}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="#/orders/create" class="button">Добавить заказ</a>
+</div>

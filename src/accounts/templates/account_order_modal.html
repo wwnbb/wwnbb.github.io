@@ -1,0 +1,89 @@
+<div ng-controller='CreateOrdersCtr'>
+    <!-- Форма отправления заказа -->
+    <div class="row">
+        <div class="small-12 columns"></div>
+    <fieldset>
+        <h2>Отправление:</h2>
+        <div class="row">
+            <div class="small-4 columns">
+                <p>Дата приезда:</p>
+                <input class="datetimepicker" type="text" ng-model='form.order_datetime'>
+            </div>
+            <div class="small-4 columns">
+                <p>Плательщик:</p>
+                <select ng-model='form.payer'>
+                    <option value="1">Отправитель</option>
+                    <option value="2">Получатель</option>
+                    <option value="3">Третье лицо</option>
+                    <option value="4">Отправитель (безналичный расчет)</option>
+                    <option value="5">Получатель (безналичный расчет)</option>
+                    <option value="6">Третье лицо (безналичный расчет)</option>
+                </select>
+            </div>
+            <div class="small-4 columns">
+                <p>Ценность отправления</p>
+                <input type="text" ng-model='form.worth'>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-6 columns">
+                <p>Тип отправления:</p>
+                <select ng-model='form.is_docs'>
+                    <option value='true' selected="selected">Документы</option>
+                    <option value='false'>Товары</option>
+                </select>
+            </div>
+            <div class="small-6 columns">
+                <p><span class="mark">**</span>Вес (кг):</p>
+                <input ng-model='form.weight' type="text" class="weight">
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-6 columns">
+                <p>Адрес отправителя</p>
+                <input type="text" ng-model="form.sender_adress">
+            </div>
+            <div class="small-6 columns">
+                <p>Адрес получателя</p>
+                <input type="text" ng-model="form.recipeint_adress">
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 column">
+                <p><span class="mark">**</span>Размеры (см):</p>
+
+                <div class="small-4 column">
+                    <p>Длина</p>
+                    <input ng-model='form.dimension_x' type="text" class="length">
+                </div>
+                <div class="small-4 column">
+                    <p>Ширина</p>
+                    <input ng-model='form.dimension_y' type="text" class="width">
+                </div>
+                <div class="small-4 column">
+                    <p>Высота</p>
+                    <input ng-model='form.dimension_z'  type="text" class="height">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-6 column"></div>
+            <div class="small-6 column"></div>
+        </div>
+        <div class="row">
+            <div class="small-6 column">
+                <p>Комментарий:</p>
+                <input ng-model='form.comment' type="text">
+            </div>
+            <div class="small-6 column">
+                <a href="" class="button" value="" ng-click="sendform()">Добавить заказ</a>
+            </div>
+        </div>
+
+
+    </fieldset>
+</div>
+<button class="button" ng-click="ok()">OK</button>
+<a class="close-reveal-modal" ng-click="cancel()">&#215;</a>
+<script type="text/javascript"> jQuery('.datetimepicker').datetimepicker( { onGenerate:function( ct ){ jQuery(this).find('.xdsoft_date.xdsoft_weekend') .addClass('xdsoft_disabled'); }, format:"d.m.Y H:i", lang: 'ru', minTime:'10:00', maxTime:'21:00', timepickerScrollbar:'false', dayOfWeekStart: 1 }) </script>

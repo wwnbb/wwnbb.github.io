@@ -1,0 +1,60 @@
+<div class='row' ng-controller='ScheduleCtr'>
+    <div class="twelve columns centered">
+
+        <div class="row">
+            <p>заказы по расписанию</p>
+            <div class="large-4 columns">
+                <label>Дата
+                    <input class="datepicker" type="text" ng-model='form.date'>
+                </label>
+            </div>
+            <div class="large-2 columns">
+                <label>Доставка с
+                    <input class="timepicker" type="text" ng-model='form.start_time'>
+                </label>
+            </div>
+            <div class="large-2 columns">
+                <label>Доставка до
+                    <input class="timepicker" type="text" ng-model='form.end_time'>
+                </label>
+            </div>
+            <div class="large-3 large-offset-1 columns">
+                    <a href="" class="button" value="" ng-click="add()">добавить день</a>
+            </div>
+        </div>
+        <div class="row">
+            <table>
+
+                <colgroup>
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 25%;">
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 30%;">
+                </colgroup>
+                <tbody>
+                <tr ng-repeat="item in shedule">
+
+                    <td><a href="#/order-container/{@item.order_container@}/schedule/{@item.id@}"><i class="fi-paperclip size-18"></i></a> </td>
+                    <td>{@item.date | date:'yyyy-MM-dd'@}</td>
+                    <td>{@item.start_time@}</td>
+                    <td>{@item.end_time@}<a href="" ng-click="delete(item.id)"> <i class="fi-trash size-18"></i></a></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery('.datepicker').datetimepicker(
+            {
+                format:"Y-m-d",
+                timepicker:false,
+            });
+
+    jQuery('.timepicker').datetimepicker({
+        datepicker:false,
+        format:'H:i'
+    });
+
+</script>
