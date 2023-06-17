@@ -2,12 +2,12 @@ import React from 'react';
 
 const Contact: React.FC = () => {
   return (
-    <div className="contact-page">
-      <header className="header">
+    <div>
+      <header>
         <h1>Contact Me</h1>
       </header>
 
-      <section className="contact-info">
+      <section>
         <h2>Email</h2>
         <p>your-email@example.com</p>
 
