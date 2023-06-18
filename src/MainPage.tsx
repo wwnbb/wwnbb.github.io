@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MainPage: React.FC = () => {
   return (
-    <div className="ml-1 p-6">
+    <div className="ml-1">
       <header className="text-center">
         <h1 className="text-3xl font-bold">Your Name</h1>
       </header>
