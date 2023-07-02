@@ -1,28 +1,22 @@
-import { Link } from 'react-router-dom';
-import { routes, files } from '../../routes';
-import DownloadIcon from '@mui/icons-material/Download';
+import HamburgerMenu from "../util/HamburgerMenu";
 
 const Header = () => {
     return (
-        <header className="flex items-center justify-between p-5 bg-blue-500">
-            <Link to={routes.HOME} className="flex items-center">
-                <img className="h-10 w-10" src={`/images/avatar.png`} alt="Logo" />
-            </Link>
-            <nav className="space-x-4">
-                <Link to={routes.ABOUT} className="text-white hover:text-blue-200">
-                    About
-                </Link>
-                <Link to={routes.PORTFOLIO} className="text-white hover:text-blue-200">
-                    Portfolio
-                </Link>
-                <a href={files.RESUME} download="John_Doe_Resume.pdf" className="text-white hover:text-blue-200">
-                    <span>Resume</span>
-                    <DownloadIcon />
-                </a>
-                <Link to={routes.CONTACT} className="text-white hover:text-blue-200">
-                    Contact
-                </Link>
-            </nav>
+        <header className="bg-teal-700 text-white sticky top-0 z-10">
+            <section className="max-w-4xl mx-auto flex justify-between p-4 items-center">
+                <h1 className="text-3xl font-medium"><a href="#hero">🚀 Acme Rockets</a></h1>
+                <div>
+                    <div className="sm:hidden focus:outline-none">
+                        <HamburgerMenu />
+                    </div>
+                    <nav className="hidden sm:block space-x-8 tex-xl" aria-label="main">
+                        <a href="#rockets" className="opacity-90">Rockets</a>
+                        <a href="#testimonials" className="opacity-90">Testimonials</a>
+                        <a href="#contact" className="opacity-90">Contact</a>
+                    </nav>
+                </div>
+
+            </section>
         </header >
     );
 };
