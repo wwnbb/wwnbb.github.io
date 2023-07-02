@@ -11,6 +11,8 @@ const MainPage: React.FC = () => {
         </h1>
       </header>
 
+      <section><div className="bg-emerald-500 w-52 h-52 rounded-full shadow-2xl"></div></section>
+
       <section className="w-full max-w-2xl p-6 bg-white rounded shadow">
         <h2 className="text-2xl font-bold mb-4 text-gray-700">About Me</h2>
         <p className="text-gray-600">Your bio...</p>
