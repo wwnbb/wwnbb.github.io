@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactForm from '../util/ContactForm';
+import JumpingRabbit from '../blocks/JumpingRabbit';
 
 
 const MainPage: React.FC = () => {
@@ -17,19 +18,19 @@ const MainPage: React.FC = () => {
       <section id="rockets" className="p-6 my-12 scroll-mt-20">
         <h2 className="text4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">Our rockets</h2>
         <ul className="mx-auto list-none flex flex-col sm:flex-row items-center my-12 gap-8">
-          <li className="w-2/3 sm-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-black py-6 px-2 rounded-3xl shadow-xl"> 
+          <li className="w-2/3 sm-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-black py-6 px-2 rounded-3xl shadow-xl">
             <img src={`/images/rocketman.png`} className="w-1/2 mb-6" />
             <h3 className="text-3xl text-center text-slate-900 dark:text-white">Explorer</h3>
             <p className="hidden sm:block text-3xl text-center mt-2 text-slate-500 dark:text-slate-400">$</p>
             <p className="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400">Afforbadle Exploration</p>
           </li>
-          <li className="w-2/3 sm-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-black py-6 px-2 rounded-3xl shadow-xl"> 
+          <li className="w-2/3 sm-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-black py-6 px-2 rounded-3xl shadow-xl">
             <img src={`/images/rocketman.png`} className="w-1/2 mb-6" />
             <h3 className="text-3xl text-center text-slate-900 dark:text-white">Adventure</h3>
             <p className="hidden sm:block text-3xl text-center mt-2 text-slate-500 dark:text-slate-400">$$</p>
             <p className="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400">Best Selling Rocket</p>
           </li>
-          <li className="w-2/3 sm-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-black py-6 px-2 rounded-3xl shadow-xl"> 
+          <li className="w-2/3 sm-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-white dark:bg-black py-6 px-2 rounded-3xl shadow-xl">
             <img src={`/images/rocketman.png`} className="w-1/2 mb-6" />
             <h3 className="text-3xl text-center text-slate-900 dark:text-white">Infinity</h3>
             <p className="hidden sm:block text-3xl text-center mt-2 text-slate-500 dark:text-slate-400">$$$</p>
@@ -47,11 +48,11 @@ const MainPage: React.FC = () => {
               has always been there
               for me. Their Explorer rocket arrived in a wooden crate as expected.
               Life-long customer! A++ shopping experience.
-              </p>
+            </p>
           </blockquote>
           <figcaption className="italic text-xl sm:text-2xl text-right mt-2 text-slate-500 dark:text-slate-400">
             &#8212;Wile E. Coyote, Genius
-          </figcaption>   
+          </figcaption>
         </figure>
         <figure className="my-12">
           <blockquote className="bg-teal-600 dark:bg-black pl-14 pr-8 py-12 rounded-3xl relative">
@@ -60,11 +61,11 @@ const MainPage: React.FC = () => {
               has always been there
               for me. Their Explorer rocket arrived in a wooden crate as expected.
               Life-long customer! A++ shopping experience.
-              </p>
+            </p>
           </blockquote>
           <figcaption className="italic text-xl sm:text-2xl text-right mt-2 text-slate-500 dark:text-slate-400">
             &#8212;Wile E. Coyote, Genius
-          </figcaption>   
+          </figcaption>
         </figure>
         <figure className="my-12">
           <blockquote className="bg-teal-600 dark:bg-black pl-14 pr-8 py-12 rounded-3xl relative">
@@ -73,20 +74,22 @@ const MainPage: React.FC = () => {
               has always been there
               for me. Their Explorer rocket arrived in a wooden crate as expected.
               Life-long customer! A++ shopping experience.
-              </p>
+            </p>
           </blockquote>
           <figcaption className="italic text-xl sm:text-2xl text-right mt-2 text-slate-500 dark:text-slate-400">
             &#8212;Wile E. Coyote, Genius
-          </figcaption>   
+          </figcaption>
         </figure>
         <hr className="mx-auto bg-black dark:bg-white w-1/2 border-solid" />
       </section>
       <section id="contact" className="p-6 my-12">
         <h2 className="text4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">Contact</h2>
-        <hr className="mx-auto bg-black dark:bg-white w-1/2 border-solid" />
+        <hr className={`mx-auto bg-black dark:bg-white w-1/2 border-solid`} />
         <ContactForm />
       </section>
-        
+
+      <JumpingRabbit />
+
     </main>
   );
 }
