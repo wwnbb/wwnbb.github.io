@@ -1,5 +1,4 @@
 import React from 'react';
-import SocialNetwork from '../soc/SocialNetwork'
 
 const Contact: React.FC = () => {
   return (
@@ -19,10 +18,6 @@ const Contact: React.FC = () => {
           <p className="text-gray-500">+1234567890</p>
         </div>
       </section>
-
-      <footer>
-        <SocialNetwork />
-      </footer>
     </div>
   );
 }

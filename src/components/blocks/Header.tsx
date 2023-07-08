@@ -3,25 +3,34 @@ import { routes, files } from '../../routes';
 import DownloadIcon from '@mui/icons-material/Download';
 
 const Header = () => {
+    const hoverClass = 'hover:border-b-2 hover:border-solid hover:border-sdarkcyan'
+    const navItems = [
+        {
+            to: routes.ABOUT,
+            text: 'HOME',
+        },
+        {
+            to: routes.BLOG,
+            text: 'BLOG',
+        },
+        {
+            to: routes.BLOG,
+            text: 'ABOUT',
+        },
+        {
+            to: routes.CONTACT,
+            text: 'CONTACT',
+        }
+    ];
+
     return (
-        <header className="flex items-center justify-between p-5 bg-blue-500">
-            <Link to={routes.HOME} className="flex items-center">
-                <img className="h-10 w-10" src={`/images/avatar.png`} alt="Logo" />
-            </Link>
-            <nav className="space-x-4">
-                <Link to={routes.ABOUT} className="text-white hover:text-blue-200">
-                    About
-                </Link>
-                <Link to={routes.PORTFOLIO} className="text-white hover:text-blue-200">
-                    Portfolio
-                </Link>
-                <a href={files.RESUME} download="John_Doe_Resume.pdf" className="text-white hover:text-blue-200">
-                    <span>Resume</span>
-                    <DownloadIcon />
-                </a>
-                <Link to={routes.CONTACT} className="text-white hover:text-blue-200">
-                    Contact
-                </Link>
+        <header className="w-full h-full">
+            <nav className="h-full flex justify-between items-center ">
+                {navItems.map((item, index) => (
+                    <Link key={index} to={item.to} className={hoverClass}>
+                        {item.text}
+                    </Link>
+                ))}
             </nav>
         </header >
     );
