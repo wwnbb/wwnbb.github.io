@@ -7,9 +7,6 @@ export default {
   ],
   theme: {
     extend: {
-      textShadow: {
-        default: '1px 1px 1px rgba(0,0,0,0.5), -1px -1px 1px rgba(0,0,0,0.5)',
-      },
       fontFamily: {
         'sans': ['Inter', ...fontFamily.sans],
       },
@@ -19,10 +16,11 @@ export default {
         base01: '#586e75',
         base00: '#657b83',
         base0: '#839496',
-        base1: '#93a1a1',
+        base1: '#c9c4b5',
         base2: '#eee8d5',
         base3: '#fdf6e3',
         basebg: '#E1D5C9',
+        sgray: '#93a1a1',
         syellow: '#b58900',
         sorange: '#cb4b16',
         sred: '#dc322f',

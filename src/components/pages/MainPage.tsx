@@ -3,15 +3,16 @@ import React from 'react';
 
 const MainPage: React.FC = () => {
   return (
-    <div className="flex h-full w-full">
+    <div className="flex h-full w-full space-x-20">
       <div className="flex-1 w-full h-full flex justify-center align-middle">
-        <img src="/images/codesnippets.png" alt="" className="h-full object-cover" />
+        <img src="/images/codesnippets.png" alt="" className="w-full h-full object-scale-down" />
       </div>
 
-      <div className="flex-1">
-
-        <img src="/images/avatar.png" alt="" />
-        <p className="text-7xl font-bold">EXPERIENCE <span className="text-red-600 text-shadow-default">EXCEPTIONAL</span> CODE</p>
+      <div className="flex-1 flex flex-col justify-evenly">
+        <div className="ml-10">
+          <img src="/images/avatar.png" alt="" className="w-40 h-40" />
+        </div>
+        <p className="text-8xl font-extrabold">EXPERIENCE <span className="text-shadow-default dark:text-shadow-dark">EXCEPTIONAL</span><br /> CODE</p>
       </div>
     </div>
   );

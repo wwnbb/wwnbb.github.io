@@ -6,7 +6,7 @@ const Header = () => {
     const hoverClass = 'hover:border-b-2 hover:border-solid hover:border-sdarkcyan'
     const navItems = [
         {
-            to: routes.ABOUT,
+            to: routes.HOME,
             text: 'HOME',
         },
         {
@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <header className="w-full h-full">
-            <nav className="h-full flex justify-between items-center ">
+            <nav className="h-full flex justify-between items-center text-3xl">
                 {navItems.map((item, index) => (
                     <Link key={index} to={item.to} className={hoverClass}>
                         {item.text}
