@@ -7,24 +7,19 @@ import { routes } from './routes';
 import Footer from './components/blocks/Footer';
 import Blog from './components/pages/Blog';
 
-import { initializeApp } from "firebase/app";
-
-import { getAnalytics } from "firebase/analytics";
-import About from './components/pages/About';
-
 
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="grid grid-cols-12 grid-rows-12 h-screen">
-        <div className="col-start-7 col-end-11 row-start-2 row-end-3">
+      <div className="grid sm:grid-cols-6 sm:grid-rows-5 lg:grid-cols-12 lg:grid-rows-12">
+        <div className="sm:hidden lg:col-start-7 lg:col-end-11 lg:row-start-2 lg:row-end-3">
           <Header />
         </div>
-        <div className="col-start-1 col-end-2 row-start-2 row-end-13 row-span-full">
+        <div className="sm:fixed sm:bottom-0 sm:w-full lg:relative lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-13 lg:row-span-full">
           <Footer />
         </div>
-        <div className="col-start-2 col-end-12 row-start-3 row-end-12">
+        <div className="w-full h-full sm:col-start-1 sm:col-end-7 sm:row-start-1 sm:row-end-5 lg:col-start-2 lg:col-end-12 lg:row-start-3 lg:row-end-12">
 
           <Routes>
             <Route path={routes.HOME} element={<MainPage />} />

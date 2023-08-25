@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import { routes, files } from '../../routes';
-import DownloadIcon from '@mui/icons-material/Download';
+import { routes } from '../../routes';
 
 const Header = () => {
     const hoverClass = 'hover:border-b-2 hover:border-solid hover:border-sdarkcyan'

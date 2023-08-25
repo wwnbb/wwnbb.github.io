@@ -13,11 +13,19 @@
     color: rgba(250,10,10, 0.8);
     text-shadow: 1px 4px 6px #002b36, 0 0 0 #0f0, 1px 4px 6px #002b36;
   }
+  .menu-shadow-white {
+    box-shadow: 0px -10px 10px 0px #F5F4F3;
+  }
+  .menu-shadow-unset {
+    box-shadow: unset;
+  }
+  .h-noscroll {
+    height: calc(var(--vh, 1vh) * 80);
+  }
 }
 
 
-@media (min-width: 1440px) {
-  html {
+@media (min-width: 1440px) { html {
     font-size: 16px;
   }
 }

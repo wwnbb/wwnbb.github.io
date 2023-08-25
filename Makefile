@@ -30,11 +30,11 @@ help:
 
 .PHONY: predeploy
 predeploy:
-	@npm run build
+	@npm run predeploy
 
 .PHONY: deploy
 deploy:
-	@gh-pages -d dist
+	@npm run deploy
 
 .PHONY: dev
 dev:
@@ -42,12 +42,12 @@ dev:
 
 .PHONY: build
 build:
-	@vite build
+	@nmp run build
 
 .PHONY: lint
 lint:
-	@eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0
+	@npm run lint
 
 .PHONY: preview
 preview:
-	@vite preview
+	@npm run preview

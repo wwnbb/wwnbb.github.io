@@ -11,3 +11,12 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+window.addEventListener('resize', setHeight);
+
+function setHeight() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setHeight(); // Call once on load
