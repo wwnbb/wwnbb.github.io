@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import MenuNav from './components/blocks/Header';
+import MenuNav from './components/blocks/MenuNav';
 import HeroPage from './components/pages/HeroPage';
 import Portfolio from './components/pages/Portfolio';
 import { routes } from './routes';

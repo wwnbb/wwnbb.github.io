@@ -2,7 +2,7 @@ export const routes = {
     HOME: "/",
     BLOG: "/blog",
     ABOUT: "/about",
-    CONTACT: "/contact"
+    CONTACT: "/resume"
 }
 
 export const files = {
