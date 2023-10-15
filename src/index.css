@@ -19,9 +19,6 @@
   .menu-shadow-unset {
     box-shadow: unset;
   }
-  .h-noscroll {
-    height: calc(var(--vh, 1vh) * 80);
-  }
 }
 
 

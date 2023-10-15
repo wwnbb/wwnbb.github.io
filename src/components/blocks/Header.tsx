@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { routes } from '../../routes';
 
-const Header = () => {
+const MenuNav = ({ isMenuOpen }) => {
     const hoverClass = 'hover:border-b-2 hover:border-solid hover:border-sdarkcyan'
     const navItems = [
         {
@@ -13,18 +13,14 @@ const Header = () => {
             text: 'BLOG',
         },
         {
-            to: routes.BLOG,
-            text: 'ABOUT',
-        },
-        {
             to: routes.CONTACT,
             text: 'CONTACT',
         }
     ];
 
     return (
-        <header className="w-full h-full">
-            <nav className="h-full flex justify-between items-center text-3xl">
+        <header className={`${isMenuOpen ? 'sm:block' : 'sm:hidden'} sm:fixed w-full h-full sm:top-2/4 inset-0 sm:bg-opacity-50 sm:bg-base0`}>
+            <nav className="h-full flex justify-evenly items-center text-3xl sm:flex sm:flex-col sm:h-2/5">
                 {navItems.map((item, index) => (
                     <Link key={index} to={item.to} className={hoverClass}>
                         {item.text}
@@ -35,4 +31,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default MenuNav;

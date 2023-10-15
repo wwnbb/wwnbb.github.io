@@ -1,22 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import BlogService from '../../services/BlogService';
 
 
-function BlogPost() {
-  const [post, setPost] = useState(null);
+function BlogPosts() {
+  const [posts, setPost] = useState(null);
 
   useEffect(() => {
-    // Replace 'postID' with the ID of the post you want to fetch
-    BlogService.getPost('-N_0PjcueXnvqzAK1TW_').then(setPost);
+    BlogService.getPosts().then(setPost);
   }, []);
 
   return (
     <div>
-      {post ? (
+      {posts ? (
         <>
-          <h2>{post.title}</h2>
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          {posts.map((post) => {
+            const date = new Date(post.date);  // Assuming post.date is in a format that JS can understand
+            const readableDate = date.toLocaleString();
+            return (
+              <div key={post.id}>
+                <h2>{post.title}</h2>
+                <p>{readableDate}</p>
+                <p>{post.short_content}</p>
+              </div>
+            );
+          })}
         </>
       ) : (
         'Loading...'
@@ -25,4 +33,4 @@ function BlogPost() {
   );
 }
 
-export default BlogPost;
+export default BlogPosts;
