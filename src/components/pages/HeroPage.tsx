@@ -10,9 +10,9 @@ const HeroPage: React.FC = () => {
 
       <div className="sm:justify-around flex-1 flex flex-col justify-evenly sm:mx-0 sm:my-auto lg:m-0">
         <div className="sm:self-center lg:self-start lg:ml-10">
-          <img src="/images/avatar.png" alt="" className="self-center w-96 h-96 text-center" />
+          <img src="/images/avatar.png" alt="" className="self-center w-44 h-44 text-center" />
         </div>
-        <p className="text-9xl text-center lg:text-8xl font-extrabold">EXPERIENCE <span className="text-shadow-default dark:text-shadow-dark">EXCEPTIONAL</span><br /> CODE</p>
+        <p className="text-9xl sm:text-center lg:text-left lg:text-8xl font-extrabold">EXPERIENCE <span className="text-shadow-default dark:text-shadow-dark">EXCEPTIONAL</span><br /> CODE</p>
       </div>
     </div>
   );
