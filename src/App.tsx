@@ -42,7 +42,7 @@ const App: React.FC = () => {
           <MenuNav isMenuOpen={isMenuOpen} />
         </div>
 
-        <div className="sm:fixed sm:bottom-0 sm:w-[101%] left-[-2px] lg:bottom-0 lg:h-[100vh] lg:w-[10%]">
+        <div className="sm:fixed sm:z-10 sm:bottom-0 sm:w-[101%] left-[-2px] lg:bottom-0 lg:h-[100vh] lg:w-[10%]">
           <Footer ref={divRef} toggleMenu={toggleMenu} />
         </div>
 

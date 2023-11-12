@@ -52,11 +52,17 @@ function Post() {
           </SyntaxHighlighter>
           <IconButton
             onClick={() => copyToClipboard(content)}
-            style={{ position: 'absolute', top: '5px', right: '5px' }}
+            style={{
+              position: 'absolute',
+              top: '5px',
+              right: '5px',
+              backdropFilter: 'blur(10px)',
+              background: 'transparent'
+            }}
           >
             <ContentCopy style={{ color: '#859900' }} />
           </IconButton>
-        </div>
+        </div >
       ) : (
         <code className={className} {...props}>
           {children}
