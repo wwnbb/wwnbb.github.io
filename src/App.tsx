@@ -6,11 +6,29 @@ import Portfolio from './components/pages/Portfolio';
 import { routes } from './routes';
 import Footer from './components/blocks/Footer';
 import Blog from './components/pages/Blog';
+import Post from './components/pages/Post';
 
 
 
 const App: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = React.useState(false);
+  const divRef = React.useRef<HTMLElement>(null);
+
+  React.useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (divRef.current && !divRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [divRef]);
+  React.useEffect(() => {
+    // Close the menu on route change
+    setMenuOpen(false);
+  }, [location]);
 
   function toggleMenu() {
     console.log('toggleMenu');
@@ -20,18 +38,19 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="grid sm:grid-cols-6 lg:grid-cols-12 lg:grid-rows-12">
+      <div className="grid sm:grid-cols-6 sm:grid-rows-1">
         <div className="lg:col-start-7 lg:col-end-11 lg:row-start-2 lg:row-end-3">
           <MenuNav isMenuOpen={isMenuOpen} />
         </div>
-        <div className="sm:fixed sm:bottom-0 sm:w-full lg:relative lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-13 lg:row-span-full">
-          <Footer toggleMenu={toggleMenu} />
+        <div className="sm:fixed sm:bottom-0 sm:w-[101%] left-[-2px] lg:static lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-13 lg:row-span-full">
+          <Footer ref={divRef} toggleMenu={toggleMenu} />
         </div>
-        <div className="w-full h-full sm:col-start-1 sm:col-end-7 sm:row-start-1 sm:row-end-5 lg:col-start-2 lg:col-end-12 lg:row-start-3 lg:row-end-12">
+        <div className="w-full h-full sm:col-start-1 sm:col-end-7 lg:col-start-2 lg:col-end-12">
 
           <Routes>
             <Route path={routes.HOME} element={<HeroPage />} />
             <Route path={routes.BLOG} element={<Blog />} />
+            <Route path={routes.POST} element={<Post />} />
             <Route path={routes.CONTACT} element={<Portfolio />} />
           </Routes>
 

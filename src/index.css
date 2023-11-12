@@ -19,11 +19,19 @@
   .menu-shadow-unset {
     box-shadow: unset;
   }
+  .disable-outline {
+    touch-action: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+  .disable-outline:focus {
+    outline: none;
+  }
 }
 
-
 #root {
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 @media (min-width: 1440px) { html {
@@ -41,4 +49,104 @@
   html {
     font-size: 20px;
   }
+}
+
+
+/* dark mode code color pre tag should be solirized light background */
+@media (prefers-color-scheme: dark) {
+  pre {
+    color: #bdbaa8;
+    background-color: #0A3946;
+  }
+}
+/* light mode code color pre tag should be solirized dark background */
+/* also text should match solirized dark */
+@media (prefers-color-scheme: light) {
+  pre {
+    color: #234953;
+    background-color: #D2C4B7;
+  }
+}
+
+pre {
+  margin-top: 8rem;
+  border-radius: 0.5rem;
+  width: 100%; /* Makes the code container fit the width of its parent */
+  overflow-x: auto; /* Enables horizontal scrolling for content that is too wide */
+  white-space: pre;
+  padding: 1.5rem;
+}
+
+pre code {
+  font-size: 2.5rem;
+  width: 100%; /* Makes the code container fit the width of its parent */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  line-height: 3.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+
+.markdown-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+}
+
+.markdown-text h1 {
+  margin-top: 8rem;
+  font-size: 4.5rem;
+  line-height: 6.5rem;
+  font-weight: 800;
+  padding-bottom: 1rem;
+}
+
+.markdown-text h2 {
+  margin-top: 8rem;
+  font-size: 4rem;
+  line-height: 4.5rem;
+  font-weight: 800;
+  padding-bottom: 1rem;
+}
+
+.markdown-text h3 {
+  margin-top: 8rem;
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+  font-weight: 800;
+}
+
+.markdown-text h4 {
+  margin-top: 8rem;
+  font-size: 3.25rem;
+  line-height: 3.5rem;
+  font-weight: 800;
+}
+
+.markdown-text h5 {
+  margin-top: 8rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 800;
+}
+
+.markdown-text p {
+  font-size: 3.0rem;
+  line-height: 4.5rem;
+  font-weight: 400;
+  margin-top: 8rem;
+}
+
+.markdown-text a {
+  font-size: 3.0rem;
+  line-height: 3.5rem;
+  font-weight: 400;
+}
+
+.markdown-text ul, ol {
+  font-size: 3.0rem;
+  line-height: 4.5rem;
+  font-weight: 400;
+  margin-top: 8rem;
 }

@@ -33,6 +33,7 @@ export default {
       },
       gridTemplateRows: {
         '12': 'repeat(12, minmax(0, 1fr))',
+        '11-auto': 'repeat(11, 8.33vh) 1fr',
       },
       gridRow: {
         '8': '8',
