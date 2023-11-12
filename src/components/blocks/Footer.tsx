@@ -13,7 +13,7 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>((props, ref) => {
 
     return (
         <>
-            <section ref={ref} className="flex w-full h-full sm:flex sm:flex-col justify-end lg:dark:text-base3 lg:text-base03 sm:dark:text-base3 sm:text-base3">
+            <section ref={ref} className="flex w-full h-full z-0 sm:flex sm:flex-col justify-end lg:dark:text-base3 lg:text-base03 sm:dark:text-base3 sm:text-base3">
                 <div className="bg-gradient-to-r from-base03 to-base02  sm:h-2/3 sm:w-full flex sm:flex-row sm:justify-between lg:flex-col justify-end items-center lg:w-full lg:h-full lg:bg-none">
                     <a className="mt-4 mb-auto">
                         <div className="sm:text-9xl lg:text-4xl">

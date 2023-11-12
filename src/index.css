@@ -64,7 +64,7 @@
     color: #bdbaa8;
     background-color: #0A3946 !important;
   }
-  pre > div {
+  pre > div > div {
     background-color: #0A3946 !important;
   }
 }
@@ -74,7 +74,7 @@
   pre {
     background-color: #D2C4B7 !important;
   }
-  pre > div {
+  pre > div > div {
     background-color: #D2C4B7 !important;
   }
 }
@@ -92,6 +92,10 @@ pre code {
   overflow-x: auto; /* Enables horizontal scrolling */
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+}
+
+pre svg {
+  font-size: 3.5rem !important;
 }
 
 .markdown-text {
@@ -156,6 +160,11 @@ pre code {
   margin-top: 8rem;
 }
 
+.markdown-text pre {
+  z-index: -1;
+  position: relative;
+}
+
 @media screen and (min-width: 1024px) {
   .markdown-text {
     font-size: 1.4rem; /* 20% decrease from 1.75rem */
@@ -218,9 +227,12 @@ pre code {
     overflow-x: auto; /* Enables horizontal scrolling for content that is too wide */
     white-space: pre;
   }
+  pre svg {
+    font-size: 1.5rem !important;
+  }
 }
 
-pre > div {
+pre > div > div {
   padding: 1rem !important;
   margin: unset !important;
 }
