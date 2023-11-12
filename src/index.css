@@ -62,38 +62,37 @@
 @media (prefers-color-scheme: dark) {
   pre {
     color: #bdbaa8;
-    background-color: #0A3946;
+    background-color: #0A3946 !important;
+  }
+  pre > div {
+    background-color: #0A3946 !important;
   }
 }
 /* light mode code color pre tag should be solirized dark background */
 /* also text should match solirized dark */
 @media (prefers-color-scheme: light) {
   pre {
-    color: #234953;
-    background-color: #D2C4B7;
+    background-color: #D2C4B7 !important;
+  }
+  pre > div {
+    background-color: #D2C4B7 !important;
   }
 }
 
 pre {
   margin-top: 8rem;
-  border-radius: 0.5rem;
   width: 100%; /* Makes the code container fit the width of its parent */
   overflow-x: auto; /* Enables horizontal scrolling for content that is too wide */
   white-space: pre;
-  padding: 1.5rem;
 }
 
 pre code {
   font-size: 2.5rem;
   width: 100%; /* Makes the code container fit the width of its parent */
   overflow-x: auto; /* Enables horizontal scrolling */
-  border-radius: 0.5rem;
-  padding: 1rem;
-  line-height: 3.5rem;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
 }
-
 
 .markdown-text {
   font-family: 'Inter', sans-serif;
@@ -155,4 +154,73 @@ pre code {
   line-height: 4.5rem;
   font-weight: 400;
   margin-top: 8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .markdown-text {
+    font-size: 1.4rem; /* 20% decrease from 1.75rem */
+  }
+
+  .markdown-text h1 {
+    font-size: 2.52rem; /* 20% decrease from 3.15rem */
+    line-height: 3.64rem; /* Adjusted proportionally */
+    margin-top: 4rem;
+  }
+
+  .markdown-text h2 {
+    font-size: 2.24rem; /* 20% decrease from 2.8rem */
+    line-height: 2.52rem; /* Adjusted proportionally */
+    margin-top: 4rem;
+  }
+
+  .markdown-text h3 {
+    font-size: 1.96rem; /* 20% decrease from 2.45rem */
+    line-height: 1.96rem; /* Adjusted proportionally */
+    margin-top: 4rem;
+  }
+
+  .markdown-text h4 {
+    font-size: 1.82rem; /* 20% decrease from 2.275rem */
+    line-height: 1.96rem; /* Adjusted proportionally */
+    margin-top: 4rem;
+  }
+
+  .markdown-text h5 {
+    font-size: 1.68rem; /* 20% decrease from 2.1rem */
+    line-height: 1.96rem; /* Adjusted proportionally */
+    margin-top: 4rem;
+  }
+
+  .markdown-text p {
+    margin-top: 3rem;
+    font-size: 1.68rem; /* 20% decrease from 2.1rem */
+    line-height: 2.52rem; /* Adjusted proportionally */
+  }
+
+  .markdown-text a {
+    font-size: 1.68rem; /* 20% decrease from 2.1rem */
+    line-height: 1.96rem; /* Adjusted proportionally */
+  }
+
+  .markdown-text ul, ol {
+    font-size: 1.68rem; /* 20% decrease from 2.1rem */
+    line-height: 2.52rem; /* Adjusted proportionally */
+  }
+
+  pre code {
+    font-size: 0.88rem; /* 20% decrease from 1.1rem */
+    line-height: 0.92rem; /* Adjusted proportionally */
+  }
+  pre {
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    width: 100%; /* Makes the code container fit the width of its parent */
+    overflow-x: auto; /* Enables horizontal scrolling for content that is too wide */
+    white-space: pre;
+  }
+}
+
+pre > div {
+  padding: 1rem !important;
+  margin: unset !important;
 }

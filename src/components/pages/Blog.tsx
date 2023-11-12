@@ -46,8 +46,8 @@ function BlogPosts() {
               </div>
             );
           })}
-          <div className="w-full flex mb-40 text-5xl text-scyan justify-end px-10">
-            <span>[
+          <div className="w-full flex mb-40 text-5xl lg:text-2xl text-scyan justify-end px-10">
+            <span className="underline">{currentPage}</span> &nbsp; &gt; &nbsp; <span>[
               {Array.from({ length: totalPages }, (_, index) => (
                 <React.Fragment key={index}>
                   <button
