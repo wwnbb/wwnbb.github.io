@@ -28,12 +28,9 @@ help:
 	@echo "  $(GREEN)lint$(RESET)           Run ESLint on src"
 	@echo "  $(GREEN)preview$(RESET)        Run 'vite preview'"
 
-.PHONY: predeploy
-predeploy:
-	@npm run predeploy
-
 .PHONY: deploy
 deploy:
+	@npm run predeploy
 	@npm run deploy
 
 .PHONY: dev

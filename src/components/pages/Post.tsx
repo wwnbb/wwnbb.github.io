@@ -11,20 +11,18 @@ function Post() {
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
-    console.log(id);
     var file = ref(storage, `posts/${id}.md`)
     getBytes(file).then((content) => {
       // Bytes now contains an ArrayBuffer of the file
       const text = new TextDecoder("utf-8").decode(content);
       setMarkdown(text)
-    }).catch((error) => {
-      console.error(error);
+    }).catch((_) => {
       setMarkdown("Failed to load post");
     });
   }, []);
 
   return (
-    <div className="mx-10 hyphens-auto break-words markdown-text pb-96 pt-40">
+    <div className="mx-10 hyphens-auto break-words markdown-text pb-96">
       {markdown ? <Markdown>{markdown}</Markdown> : "Loading..."}
     </div>
   );

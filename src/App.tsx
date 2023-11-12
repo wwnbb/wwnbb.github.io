@@ -31,21 +31,22 @@ const App: React.FC = () => {
   }, [location]);
 
   function toggleMenu() {
-    console.log('toggleMenu');
     setMenuOpen((prev) => !prev);
-    console.log(isMenuOpen);
   };
 
   return (
     <Router>
-      <div className="grid sm:grid-cols-6 sm:grid-rows-1">
-        <div className="lg:col-start-7 lg:col-end-11 lg:row-start-2 lg:row-end-3">
+      <div className="sm:grid sm:grid-cols-6 sm:grid-rows-1 lg:flex lg:flex-col lg:pl-[9%]">
+
+        <div className="">
           <MenuNav isMenuOpen={isMenuOpen} />
         </div>
-        <div className="sm:fixed sm:bottom-0 sm:w-[101%] left-[-2px] lg:static lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-13 lg:row-span-full">
+
+        <div className="sm:fixed sm:bottom-0 sm:w-[101%] left-[-2px] lg:bottom-0 lg:h-[100vh] lg:w-[10%]">
           <Footer ref={divRef} toggleMenu={toggleMenu} />
         </div>
-        <div className="w-full h-full sm:col-start-1 sm:col-end-7 lg:col-start-2 lg:col-end-12">
+
+        <div className="w-full sm:col-start-1 sm:col-end-7">
 
           <Routes>
             <Route path={routes.HOME} element={<HeroPage />} />
