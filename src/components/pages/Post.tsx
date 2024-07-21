@@ -41,7 +41,7 @@ function Post() {
       const match = /language-(\w+)/.exec(className || '');
       const content = String(children).replace(/\n$/, '');
       return !inline && match ? (
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: 'inherit' }}>
           <SyntaxHighlighter
             style={isDarkMode ? solarizedDarkAtom : solarizedlight}
             language={match[1]}

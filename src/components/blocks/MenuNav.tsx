@@ -27,7 +27,7 @@ const MenuNav = ({ isMenuOpen }) => {
 
     const smClasses = `
         sm:fixed w-full h-full sm:top-2/4 inset-0 sm:bg-opacity-80 sm:dark:bg-opacity-80
-        sm:dark:bg-base03 sm:bg-base0 sm:backdrop-blur-lg  sm:border-t-8
+        sm:dark:bg-base03 sm:bg-base0 sm:backdrop-blur-lg  sm:border-t-8 z-10
     `
 
     const lgClasses = `

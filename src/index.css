@@ -67,6 +67,29 @@
   pre > div > div {
     background-color: #0A3946 !important;
   }
+
+  /*  */
+  /* For Webkit browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #002b36;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #002b36;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c9c4b5;
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-color: #c9c4b5 #002b36;
+  }
 }
 /* light mode code color pre tag should be solirized dark background */
 /* also text should match solirized dark */
@@ -76,6 +99,29 @@
   }
   pre > div > div {
     background-color: #D2C4B7 !important;
+  }
+
+  /* For Webkit browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  /*   */
+
+  ::-webkit-scrollbar-track {
+    background: #e1d5c9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #002b36;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #002b36;
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-color: #002b36 #e1d5c9;
   }
 }
 
@@ -217,8 +263,8 @@ pre svg {
   }
 
   pre code {
-    font-size: 0.88rem; /* 20% decrease from 1.1rem */
-    line-height: 0.92rem; /* Adjusted proportionally */
+    font-size: 1em; /* 20% decrease from 1.1rem */
+    line-height: 1; /* Adjusted proportionally */
   }
   pre {
     margin-top: 2rem;

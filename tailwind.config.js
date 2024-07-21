@@ -31,7 +31,7 @@ export default {
         scyan: '#2aa198',
         sgreen: '#859900',
         codelightbg: '#D2C4B7',
-        codedarkbg: '#0a3946',
+        codedarkbg: '#00242d',
       },
       gridTemplateRows: {
         '12': 'repeat(12, minmax(0, 1fr))',
