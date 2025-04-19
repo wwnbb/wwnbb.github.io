@@ -32,7 +32,7 @@ const App: React.FC = () => {
 
   function toggleMenu() {
     setMenuOpen((prev) => !prev);
-  };
+  }
 
   return (
     <Router>
